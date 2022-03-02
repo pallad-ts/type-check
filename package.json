@@ -13,7 +13,7 @@
     "test": "pallad-scripts test",
     "compile": "pallad-scripts compile",
     "lint": "pallad-scripts lint",
-    "prepack": "compile"
+    "prepack": "npm run compile"
   },
   "files": [
     "compiled"
