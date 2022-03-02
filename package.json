@@ -4,6 +4,11 @@
   "description": "Simple type-check utility for libraries authors to prevent issues with type check of objects coming from duplicated module definitions",
   "main": "compiled/index.js",
   "types": "compiled/index.d.ts",
+  "keywords": [
+    "type-check",
+    "typescript",
+    "utility"
+  ],
   "scripts": {
     "test": "pallad-scripts test",
     "compile": "pallad-scripts compile",
