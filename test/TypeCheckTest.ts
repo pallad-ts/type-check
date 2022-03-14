@@ -71,6 +71,7 @@ describe('TypeCheck', () => {
 
 		it.each([
 			[{}],
+			// eslint-disable-next-line no-null/no-null
 			[null],
 			[undefined],
 			[1],
@@ -83,6 +84,28 @@ describe('TypeCheck', () => {
 		])('ignores values that are not coming from a check', value => {
 			expect(CHECK.isType(value))
 				.toBe(false);
+		});
+	});
+
+	describe('multiple type checks', () => {
+		const CHECK_1 = new TypeCheck('c1');
+		const CHECK_2 = new TypeCheck('c2');
+		const CHECK_3 = new TypeCheck('c3');
+
+		it('allows to register multiple types', () => {
+			const value = {};
+			CHECK_1.assign(value);
+			CHECK_2.assign(value);
+
+			expect(CHECK_1.isType(value)).toBe(true);
+			expect(CHECK_2.isType(value)).toBe(true);
+			expect(CHECK_3.isType(value)).toBe(false);
+
+			CHECK_3.assign(value);
+
+			expect(CHECK_1.isType(value)).toBe(true);
+			expect(CHECK_2.isType(value)).toBe(true);
+			expect(CHECK_3.isType(value)).toBe(true);
 		});
 	});
 });
