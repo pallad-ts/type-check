@@ -102,3 +102,19 @@ if (Foo.isType(value)) {
 	value.printMe();
 }
 ```
+
+## Multiple types
+
+Object can can hold multiple types for flexibility purposes.
+
+```typescript
+const CHECK1 = new TypeCheck('foo')
+const CHECK2 = new TypeCheck('bar')
+
+const value = {};
+CHECK1.assign(value);
+CHECK2.assign(value);
+
+CHECK1.isType(value); // true
+CHECK2.isType(value); // true
+```
