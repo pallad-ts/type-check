@@ -64,6 +64,16 @@ describe('TypeCheck', () => {
 				.toBe(true);
 		});
 
+		it('functions for type check are also accepted', () => {
+			class Foo {
+
+			}
+			CHECK.assign(Foo);
+
+			expect(CHECK.isType(Foo))
+				.toBe(true);
+		});
+
 		it('types', () => {
 			type Func = (value: any) => value is Bar;
 			assert<IsExact<typeof CHECK.isType, Func>>(true);

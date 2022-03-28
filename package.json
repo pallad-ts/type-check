@@ -1,6 +1,6 @@
 {
   "name": "@pallad/type-check",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Simple type-check utility for libraries authors to prevent issues with type check of objects coming from duplicated module definitions",
   "main": "compiled/index.js",
   "types": "compiled/index.d.ts",

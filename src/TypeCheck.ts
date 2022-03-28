@@ -47,6 +47,6 @@ export class TypeCheck<TType> {
 
 	isType(value: any): value is TType {
 		// eslint-disable-next-line no-null/no-null
-		return typeof value === 'object' && value !== null && Array.isArray(value[TYPE_KEY]) && value[TYPE_KEY].includes(this.typeName);
+		return (typeof value === 'object' || typeof value === 'function') && value !== null && Array.isArray(value[TYPE_KEY]) && value[TYPE_KEY].includes(this.typeName);
 	}
 }
